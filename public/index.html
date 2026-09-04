@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Expense Manager</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Expense Manager</h1>
+  </header>
+
+  <main>
+    <section aria-labelledby="add-expense-heading">
+      <h2 id="add-expense-heading">Add an expense</h2>
+      <form id="expense-form">
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required />
+
+        <label for="cost">Cost (Rs.)</label>
+        <input type="number" id="cost" name="cost" step="0.01" min="0" required />
+
+        <label for="description">Description</label>
+        <input type="text" id="description" name="description" maxlength="255" required />
+
+        <label for="expense_type">Type</label>
+        <select id="expense_type" name="expense_type" required>
+          <option value="travel">Travel</option>
+          <option value="food">Food</option>
+          <option value="other">Other</option>
+        </select>
+
+        <button type="submit">Save expense</button>
+      </form>
+      <p id="form-error" role="alert"></p>
+    </section>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading">Your expenses</h2>
+      <table id="expense-table">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Description</th>
+            <th scope="col">Type</th>
+            <th scope="col">Cost (Rs.)</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="expense-list">
+          <!-- rows injected by JS -->
+        </tbody>
+      </table>
+    </section>
+
+    <section aria-labelledby="detail-heading" id="detail-section" hidden>
+      <h2 id="detail-heading">Expense detail</h2>
+      <dl id="expense-detail"></dl>
+      <button id="close-detail">Close</button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
