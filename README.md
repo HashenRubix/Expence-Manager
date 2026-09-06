@@ -90,7 +90,7 @@ Costs are recorded in **LKR (Sri Lankan Rupees)**.
 1. Clone the repository into Laragon's `www` folder:
    ```bash
    cd C:\laragon\www
-   git clone <your-repo-url> expense-manager
+   git clone https://github.com/HashenRubix/Expence-Manager.git expense-manager
    cd expense-manager
    ```
 
